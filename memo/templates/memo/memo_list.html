@@ -1,18 +1,14 @@
-<html>
-    <head>
-        <title>메모 사이트에 어서오세요</title>
-    </head>
+{% extends 'memo/base.html' %}
+
+{% block content %}
     <body>
-        <div>
-            <h1>MEMOS!</h1>
-        </div>
         {% for memo in memos %}
         <p>
             <h2>{{memo.title}}</h2>
-            {{memo.text}}
-            <h6>{{memo.author}}
-            {{memo.created_date}}</h6>
+            {{memo.text|linebreaks}}
+            <h5>{{memo.author}}
+            {{memo.created_date}}</h5>
         </p>
         {% endfor %}
     </body>
-</html>
+{% endblock %}
